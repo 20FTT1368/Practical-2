@@ -5,6 +5,7 @@ import javafx.stage.Stage;
 import javafx.scene.control.Label;
 import javafx.scene.Scene;
 import java.util.Random;
+import javafx.scene.text.*;
 
 
 public class WizardOfYesNo extends Application {
@@ -30,6 +31,13 @@ private static final String[] ANSWER = {
 		
 	
 		label.setText(answer);
+		
+		//Font font = Font.font("Times New Roman", FontWeight.NORMAL, 32);
+		
+		//label.setFont(Font.font("Times New Roman", FontWeight.NORMAL, 32));
+		
+		Font font = Font.font("Times New Roman", FontWeight.BOLD, FontPosture.ITALIC, 32);
+		label.setFont(font);
 		
 		arg0.show();
 	}
