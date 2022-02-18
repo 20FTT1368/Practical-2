@@ -5,6 +5,7 @@ import java.util.Random;
 import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
+import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
@@ -175,6 +176,18 @@ public class GuessMyColour extends Application {
 				new BackgroundFill(Color.BLACK, null, null)));
 		titleLabel.setTextFill(Color.WHITE);
 
+		centerPane.setHgap(10);
+		buttonPane.setSpacing(10);
+
+		Insets insets = new Insets(10);
+		titleLabel.setPadding(insets);
+		centerPane.setPadding(insets);
+		buttonPane.setPadding(insets);
+
+		buttonPane.setAlignment(Pos.CENTER);
+		buttonPane.setBackground(new Background(
+				new BackgroundFill(Color.BLACK, null, null)));
+
 		Scene root = new Scene(rootPane);
 		arg0.setScene(root);
 
@@ -234,13 +247,13 @@ public class GuessMyColour extends Application {
 					+ targetGreen + ", blue = "
 					+ targetBlue;
 			Alert alert = new Alert(AlertType.INFORMATION);
-			
+
 			alert.setTitle("You did it");
-			
+
 			alert.setHeaderText(null);
-			
+
 			alert.setContentText(message);
-			
+
 			alert.showAndWait();
 		}
 	}
