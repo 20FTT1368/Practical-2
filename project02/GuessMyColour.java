@@ -7,6 +7,8 @@ import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.layout.Background;
@@ -223,6 +225,24 @@ public class GuessMyColour extends Application {
 	private void updateColourSample() {
 		Color color = Color.rgb(red, green, blue);
 		sampleRectangle.setFill(color);
+
+		if(red == targetRed && blue == targetBlue &&
+				green == targetGreen) {
+
+			String message = "Congratulation! You guessed it! Red = "
+					+ targetRed + ", green = "
+					+ targetGreen + ", blue = "
+					+ targetBlue;
+			Alert alert = new Alert(AlertType.INFORMATION);
+			
+			alert.setTitle("You did it");
+			
+			alert.setHeaderText(null);
+			
+			alert.setContentText(message);
+			
+			alert.showAndWait();
+		}
 	}
 
 
